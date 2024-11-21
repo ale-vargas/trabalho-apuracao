@@ -1,0 +1,328 @@
+/* Estilo das Abas */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.tab {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none; /* Esconder o conteúdo inicialmente */
+    padding: 20px;
+    border-top: none;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+/* Estilo da pag. Importar */
+form {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 20px; 
+}
+
+form label, form input {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+form button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+.box-importar {
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    background-color: #f9f9f9; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+}
+
+.box-importar h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+.box-importar form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.box-importar form label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.box-importar form input[type="file"] {
+    margin: 10px 0 20px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.box-importar form button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.box-importar form button:hover {
+    background-color: #45a049;
+}
+
+.box-importar + .box-importar {
+    margin-top: 30px; 
+}
+
+/* Estilo da pag. Apuração */
+.apuracao-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff; 
+}
+
+.sessao-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 15px; 
+    padding: 10px; 
+    font-size: 18px;
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    background-color: #f9f9f9; 
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); 
+}
+
+.apuracao-candidatos {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.candidato {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    padding: 10px;
+    width: 30%;
+    text-align: left;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s, box-shadow 0.3s; /* Animação suave */
+}
+
+.candidato:hover {
+    transform: translateY(-5px); /* Elevação ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.imagem-candidato {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; 
+    background-color: #f1f1f1;
+}
+
+.imagem-candidato img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.info-candidato p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .apuracao-candidatos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .candidato {
+        width: 80%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Estilo da pag. Resultado */
+.resultado-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff; 
+}
+
+.candidato-eleito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 30px;
+    width: 80%;
+    background-color: #f9f9f9;  
+}
+
+.imagem-eleito {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+}
+
+.imagem-eleito img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.candidato-eleito p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.outros-candidatos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.outros-candidatos .candidato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: 150px;
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.outros-candidatos .candidato:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.outros-candidatos .imagem-candidato {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; 
+    background-color: #f1f1f1;
+}
+
+.outros-candidatos .imagem-candidato img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.outros-candidatos p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .candidato-eleito {
+        width: 100%;
+    }
+
+    .outros-candidatos .candidato {
+        width: 45%;
+    }
+}

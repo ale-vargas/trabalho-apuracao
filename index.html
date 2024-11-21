@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Tabulação entre Conteúdos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="abrirAba(event, 'abaImportar')">Importar</button>
+        <button class="tablinks" onclick="abrirAba(event, 'abaApuracao')">Apuração</button>
+        <button class="tablinks" onclick="abrirAba(event, 'abaResultado')">Resultado</button>
+    </div>
+
+    <div id="abaImportar" class="tabcontent">
+        <h2>Importar Arquivos</h2>
+        
+        <!-- Box para envio de dados de Sessões -->
+        <div class="box-importar">
+            <h3>Importar Dados de Sessões</h3>
+            <form id="uploadSessoesForm">
+                <label for="arquivoSessoes">Escolha o arquivo de Sessões (.json):</label>
+                <br>
+                <input type="file" id="arquivoSessoes" name="arquivoSessoes" accept=".json">
+                <br>
+                <button type="button" onclick="AbreJsonSessoes()">Enviar Sessões</button>
+            </form>
+        </div>
+    
+        <!-- Box para envio de dados da Votação -->
+        <div class="box-importar">
+            <h3>Importar Dados da Votação</h3>
+            <form id="uploadVotacaoForm">
+                <label for="arquivoVotacao">Escolha o arquivo de Votação (.json):</label>
+                <br>
+                <input type="file" id="arquivoVotacao" name="arquivoVotacao" accept=".json">
+                <br>
+                <button type="button" onclick="AbreJsonVotacao()">Enviar Votação</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="abaApuracao" class="tabcontent">
+        <h2>Apuração de Votos</h2>
+        <div class="apuracao-container">
+            <div class="sessao-info">
+                <p><strong>Número Sessão:</strong> numSessao</p>
+                <p><strong>Total de Votos:</strong> qtdeTotal</p>
+            </div>
+            <div class="apuracao-candidatos">
+                <div class="candidato">
+                    <div class="imagem-candidato">
+                        <img src=".png" alt="Foto do Candidato">
+                    </div>
+                    <div class="info-candidato">
+                        <p><strong>Candidato:</strong> nomeCandidato1</p>
+                        <p><strong>Número de Votos:</strong> qtdeVotos</p>
+                    </div>
+                </div>
+                <div class="candidato">
+                    <div class="imagem-candidato">
+                        <img src=".png" alt="Foto do Candidato">
+                    </div>
+                    <div class="info-candidato">
+                        <p><strong>Candidato:</strong> nomeCandidato2</p>
+                        <p><strong>Número de Votos:</strong> qtdeVotos</p>
+                    </div>
+                </div>
+                <div class="candidato">
+                    <div class="imagem-candidato">
+                        <img src=".png" alt="Foto do Candidato">
+                    </div>
+                    <div class="info-candidato">
+                        <p><strong>Candidato:</strong> nomeCandidato3</p>
+                        <p><strong>Número de Votos:</strong> qtdeVotos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="abaResultado" class="tabcontent">
+        <h2>Resultado Final</h2>
+        <div class="resultado-container">
+            <!-- Candidato Eleito -->
+            <div class="candidato-eleito">
+                <h3>Candidato Eleito</h3>
+                <div class="imagem-eleito">
+                    <img src=".png" alt="Foto do Candidato Eleito">
+                </div>
+                <p><strong>Candidato:</strong> <span id="nomeEleito">nomeCandidato1</span></p>
+                <p><strong>Número de Votos:</strong> <span id="votosEleito">qtdeVotos</span></p>
+            </div>
+    
+            <!-- Outros Candidatos -->
+            <div class="outros-candidatos">
+                <div class="candidato">
+                    <div class="imagem-candidato">
+                        <img src=".png" alt="Foto do Candidato">
+                    </div>
+                    <p><strong>Candidato:</strong> nomeCandidato2</p>
+                    <p><strong>Número de Votos:</strong> qtdeVotos</p>
+                </div>
+                <div class="candidato">
+                    <div class="imagem-candidato">
+                        <img src=".png" alt="Foto do Candidato">
+                    </div>
+                    <p><strong>Candidato:</strong> nomeCandidato3</p>
+                    <p><strong>Número de Votos:</strong> qtdeVotos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
