@@ -25,7 +25,7 @@ function AbreJsonVotacao() {
         console.log(objeto); // Exibe no console
         
         // Envia o conteúdo para a API (exemplo de envio)
-        fetch("http://localhost:5174/api/Cadastros/eleicao", {
+        fetch("http://25.49.76.159:8060/api/Cadastros/eleicao", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
@@ -55,7 +55,7 @@ function AbreJsonSessoes() {
           console.log(objeto); // Exibe no console
           
           // Envia o conteúdo para a API (exemplo de envio)
-          fetch("http://localhost:5174/api/Cadastros/eleicao/importacoes-secoes", {
+          fetch("http://25.49.76.159:8060/api/Cadastros/eleicao/importacoes-secoes", {
               method: "POST",
               headers: {
                   "Content-type": "application/json"
@@ -77,15 +77,7 @@ function AbreJsonSessoes() {
   }
 
 function RecebeApuracao() {
-    // Declaração das variáveis locais dentro do método
-    let totalSecoes;
-    let secoesImportadas;
-    let totalEleitoresPresentes;
-    let percentualPresentes;
-    let totalAbstencoes;
-    let percentualAbstencoes;
-  
-    fetch("http://localhost:5174/api/Reultados/eleicao/importacoes-secoes?zonaid=0&secaoid=0")
+    fetch("http://25.49.76.159:8060/api/Reultados/eleicao/importacoes-secoes?zonaid=0&secaoid=0")
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -94,7 +86,6 @@ function RecebeApuracao() {
       })
       .then(data => {
         console.log("Dados recebidos:", data);
-
 
         //os valores do json estão dentro do data.valor
         console.log("Total de Seções:", data.totalSecoes);
@@ -105,7 +96,32 @@ function RecebeApuracao() {
         console.log("Percentual de Abstenções:", data.percentualAbstencoes);
       })
       .catch(error => {
-        console.error("Erro ao fazer o GET:", error); // Tratando erros
+        console.error("Erro ao fazer o GET:", error); 
+      });
+      RecebeResultados()
+  }
+
+  function RecebeResultados() {
+
+    fetch("http://25.49.76.159:8060/api/Reultados/eleicao/resultados?zonaid=0&secaoid=0")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json(); 
+      })
+      .then(data => {
+        console.log("Dados recebidos:", data);
+        console.log("Total de Votos válidos:", data.totalVotosValidos);
+        console.log("Percentual de votos válido:", data.totalVopercentualVotosValidostosValidos);
+
+        data.candidatos.sort((a, b) => b.quantidadeVotos - a.quantidadeVotos);
+
+        console.log(data.candidatos[0].nomeCandidato); // data.candidatos[0].nomeCandidato - nome | data.candidatos[0].percentualVotos - percenteual votos | data.candidatos[0].quantidadeVotos - quantidade votos
+        console.log(data.candidatos[1].nomeCandidato);
+        console.log(data.candidatos[2].nomeCandidato);
+      })
+      .catch(error => {
+        console.error("Erro ao fazer o GET:", error); 
       });
   }
-  
