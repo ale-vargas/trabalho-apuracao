@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Apuração de Votos</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -44,13 +43,17 @@
     </div>
     
     <div id="abaApuracao" class="tabcontent">
-        <button onclick="RecebeApuracao()">Botão feio de apuração</button>
+        <button onclick="RecebeApuracao()">Exportar Dados</button>
         <h2>Apuração de Votos</h2>
+        <h3 id="nomeEleicao">nomeEleicao</h3>
         
         <div class="apuracao-container">
             <div class="sessao-info">
-                <p><strong>Número Sessão:</strong> numSessao</p>
-                <p><strong>Total de Votos:</strong> qtdeTotal</p>
+                <p><strong>ID da Zona:</strong> <span id="idZona">idZona</span></p>
+                <p><strong>Seções:</strong> <span id="secoes">secoes</span></p>
+                <p><strong>N° de Eleitores:</strong> <span id="quantidadeEleitores">quantidadeEleitores</span></p>
+                <p><strong>N° de Presentes:</strong> <span id="quantidadePresente">quantidadePresente</span></p>
+                <p><strong>Votos Validos:</strong> <span id="votosValidos">votosValidos</span></p>
             </div>
             <div class="apuracao-candidatos">
                 <div class="candidato">
@@ -58,8 +61,8 @@
                         <img src=".png" alt="Foto do Candidato">
                     </div>
                     <div class="info-candidato">
-                        <p><strong>Candidato:</strong> nomeCandidato1</p>
-                        <p><strong>Número de Votos:</strong> qtdeVotos</p>
+                        <p><strong>Candidato:</strong> <span id="nomeCandidato1">nomeCandidato</span></p>
+                        <p><strong>Número de Votos:</strong> <span id="quantidadeVotos1">quantidadeVotos</span></p>
                     </div>
                 </div>
                 <div class="candidato">
@@ -67,8 +70,8 @@
                         <img src=".png" alt="Foto do Candidato">
                     </div>
                     <div class="info-candidato">
-                        <p><strong>Candidato:</strong> nomeCandidato2</p>
-                        <p><strong>Número de Votos:</strong> qtdeVotos</p>
+                        <p><strong>Candidato:</strong> <span id="nomeCandidato2">nomeCandidato</span></p>
+                        <p><strong>Número de Votos:</strong> <span id="quantidadeVotos2">quantidadeVotos</span></p>
                     </div>
                 </div>
                 <div class="candidato">
@@ -76,8 +79,8 @@
                         <img src=".png" alt="Foto do Candidato">
                     </div>
                     <div class="info-candidato">
-                        <p><strong>Candidato:</strong> nomeCandidato3</p>
-                        <p><strong>Número de Votos:</strong> qtdeVotos</p>
+                        <p><strong>Candidato:</strong> <span id="nomeCandidato3">nomeCandidato</span></p>
+                        <p><strong>Número de Votos:</strong> <span id="quantidadeVotos3">quantidadeVotos</span></p>
                     </div>
                 </div>
             </div>
@@ -86,6 +89,7 @@
     
     <div id="abaResultado" class="tabcontent">
         <h2>Resultado Final</h2>
+        <h3 id="nomeEleicao">nomeEleicao</h3>
         <div class="resultado-container">
             <!-- Candidato Eleito -->
             <div class="candidato-eleito">
@@ -93,8 +97,8 @@
                 <div class="imagem-eleito">
                     <img src=".png" alt="Foto do Candidato Eleito">
                 </div>
-                <p><strong>Candidato:</strong> <span id="nomeEleito">nomeCandidato1</span></p>
-                <p><strong>Número de Votos:</strong> <span id="votosEleito">qtdeVotos</span></p>
+                <p><strong>Candidato:</strong> <span id="nomeEleito">nomeCandidato</span></p>
+                <p><strong>Número de Votos:</strong> <span id="votosEleito">quantidadeVotos</span></p>
             </div>
     
             <!-- Outros Candidatos -->
@@ -103,19 +107,18 @@
                     <div class="imagem-candidato">
                         <img src=".png" alt="Foto do Candidato">
                     </div>
-                    <p><strong>Candidato:</strong> nomeCandidato2</p>
-                    <p><strong>Número de Votos:</strong> qtdeVotos</p>
+                    <p><strong>Candidato:</strong> <span id="nomeCandidato4">nomeCandidato</span></p>
+                    <p><strong>Número de Votos:</strong> <span id="quantidadeVotos4">quantidadeVotos</span></p>
                 </div>
                 <div class="candidato">
                     <div class="imagem-candidato">
                         <img src=".png" alt="Foto do Candidato">
                     </div>
-                    <p><strong>Candidato:</strong> nomeCandidato3</p>
-                    <p><strong>Número de Votos:</strong> qtdeVotos</p>
+                    <p><strong>Candidato:</strong> <span id="nomeCandidato5">nomeCandidato</span></p>
+                    <p><strong>Número de Votos:</strong> <span id="quantidadeVotos5">quantidadeVotos</span></p>
                 </div>
             </div>
         </div>
     </div>
-
 </body>
 </html>
