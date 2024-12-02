@@ -43,22 +43,26 @@
     </div>
     
     <div id="abaApuracao" class="tabcontent">
+        <input id="zonaInput" type="number" placeholder="Zona">
+        <input id="secaoInput" type="number" placeholder="Seção">
+        <button onclick="RecebeApuracao()">Pesquisar</button>
         <button onclick="RecebeApuracao()">Exportar Dados</button>
         <h2>Apuração de Votos</h2>
         <h3 id="nomeEleicao">nomeEleicao</h3>
         
         <div class="sessao-info">
             <p><strong>ID da Zona:</strong> <span id="idZona">idZona</span></p>
-            <p><strong>Seções:</strong> <span id="secoes">secoes</span></p>
-            <p><strong>N° de Eleitores:</strong> <span id="quantidadeEleitores">quantidadeEleitores</span></p>
-            <p><strong>N° de Presentes:</strong> <span id="quantidadePresente">quantidadePresente</span></p>
-            <p><strong>Votos Validos:</strong> <span id="votosValidos">votosValidos</span></p>
+            <p><strong>Seções importadas:</strong> <span id="secoes">secoes</span></p>
+            <p><strong>Total de Eleitores:</strong> <span id="totalEleitores">quantidadeEleitores</span></p>
+            <p><strong>Percentual de Presentes:</strong> <span id="percentualPresentes">quantidadePresente</span></p>
+            <p><strong>Total de Abstencoes:</strong> <span id="totalAbstencoes">quantidadePresente</span></p>
+            <p><strong>Percentual de Abstencoes:</strong> <span id="percentualAbstencoes">votosValidos</span></p>
         </div>
     </div>
     
     <div id="abaResultado" class="tabcontent">
         <h2>Resultado Final</h2>
-        <h3 id="nomeEleicao">nomeEleicao</h3>
+        <h3 id="nomeEleicao2">nomeEleicao</h3>
         <div class="resultado-container">
             <!-- Candidato Eleito -->
             <div class="candidato-eleito">

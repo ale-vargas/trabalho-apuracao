@@ -77,7 +77,23 @@ function AbreJsonSessoes() {
   }
 
 function RecebeApuracao() {
-    fetch("http://25.49.76.159:8060/api/Reultados/eleicao/importacoes-secoes?zonaid=0&secaoid=0")
+
+  let zona = document.getElementById("zonaInput")
+  let secao = document.getElementById("secaoInput")
+  let idZona = document.getElementById
+  ("idZona");
+  let secoesImportadas = document.getElementById
+  ("secoes");
+  let quantidadeEleitores = document.getElementById
+  ("totalEleitores");
+  let percentualPresentes = document.getElementById
+  ("percentualPresentes");
+  let totalAbstencoes = document.getElementById
+  ("totalAbstencoes");
+  let percentualAbstencoes = document.getElementById
+  ("percentualAbstencoes");
+
+    fetch(`http://25.49.76.159:8060/api/Reultados/eleicao/importacoes-secoes?zonaid=${zona?.value || "0"}&secaoid=${secao?.value || "0"}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -86,22 +102,36 @@ function RecebeApuracao() {
       })
       .then(data => {
         console.log("Dados recebidos:", data);
-
-        //os valores do json estão dentro do data.valor
-        console.log("Total de Seções:", data.totalSecoes);
-        console.log("Seções Importadas:", data.secoesImportadas);
-        console.log("Total de Eleitores Presentes:", data.totalEleitoresPresentes);
-        console.log("Percentual de Presentes:", data.percentualPresentes);
-        console.log("Total de Abstenções:", data.totalAbstencoes);
-        console.log("Percentual de Abstenções:", data.percentualAbstencoes);
+        idZona.textContent = "1"
+        secoesImportadas.textContent = data.secoesImportadas
+        quantidadeEleitores.textContent = data.totalEleitoresPresentes
+        percentualPresentes.textContent = data.percentualPresentes
+        totalAbstencoes.textContent = data.totalAbstencoes
+        percentualAbstencoes.textContent = data.percentualAbstencoes 
       })
       .catch(error => {
-        console.error("Erro ao fazer o GET:", error); 
+        alert(`Seção ${secao.value} não está cadastrada!`); 
       });
       RecebeResultados()
   }
 
   function RecebeResultados() {
+    let nomeEleicao = document.getElementById
+    ("nomeEleicao2");
+
+    let candidato = document.getElementById
+    ("nomeEleito");
+    let candidato1 = document.getElementById
+    ("nomeCandidato4");
+    let candidato2 = document.getElementById
+    ("nomeCandidato5");
+
+    let votos = document.getElementById
+    ("votosEleito");
+    let votos1 = document.getElementById
+    ("quantidadeVotos4");
+    let votos2 = document.getElementById
+    ("quantidadeVotos5");
 
     fetch("http://25.49.76.159:8060/api/Reultados/eleicao/resultados?zonaid=0&secaoid=0")
       .then(response => {
@@ -111,11 +141,21 @@ function RecebeApuracao() {
         return response.json(); 
       })
       .then(data => {
-        console.log("Dados recebidos:", data);
+        nomeEleicao.textContent = data.nomeEleicao;   
+   
+        console.log("Dados recebidos:", data.nomeEleicao);
         console.log("Total de Votos válidos:", data.totalVotosValidos);
         console.log("Percentual de votos válido:", data.totalVopercentualVotosValidostosValidos);
 
         data.candidatos.sort((a, b) => b.quantidadeVotos - a.quantidadeVotos);
+
+        candidato.textContent = data.candidatos[0].nomeCandidato
+        candidato1.textContent = data.candidatos[1].nomeCandidato
+        candidato2.textContent = data.candidatos[2].nomeCandidato
+
+        votos.textContent = data.candidatos[0].quantidadeVotos
+        votos1.textContent = data.candidatos[1].quantidadeVotos
+        votos2.textContent = data.candidatos[2].quantidadeVotos
 
         console.log(data.candidatos[0].nomeCandidato); // data.candidatos[0].nomeCandidato - nome | data.candidatos[0].percentualVotos - percenteual votos | data.candidatos[0].quantidadeVotos - quantidade votos
         console.log(data.candidatos[1].nomeCandidato);
