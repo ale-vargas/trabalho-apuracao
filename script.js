@@ -116,6 +116,11 @@ function RecebeApuracao() {
   }
 
   function RecebeResultados() {
+
+    let candidatoImg = document.getElementById("imgcand1")
+    let candidatoImg2 = document.getElementById("imgcand2")
+    let candidatoImg3 = document.getElementById("imgcand3")
+
     let nomeEleicao = document.getElementById
     ("nomeEleicao2");
 
@@ -156,6 +161,10 @@ function RecebeApuracao() {
         votos.textContent = data.candidatos[0].quantidadeVotos
         votos1.textContent = data.candidatos[1].quantidadeVotos
         votos2.textContent = data.candidatos[2].quantidadeVotos
+
+        candidatoImg.src = data.candidatos[0].urlImg
+        candidatoImg2.src = data.candidatos[2].urlImg
+        candidatoImg3.src = data.candidatos[3].urlImg
 
         console.log(data.candidatos[0].nomeCandidato); // data.candidatos[0].nomeCandidato - nome | data.candidatos[0].percentualVotos - percenteual votos | data.candidatos[0].quantidadeVotos - quantidade votos
         console.log(data.candidatos[1].nomeCandidato);
