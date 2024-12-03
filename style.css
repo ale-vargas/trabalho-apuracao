@@ -146,9 +146,10 @@ form button:hover {
 
 .sessao-info {
     display: flex;
-    justify-content: space-between;
-    width: 800px; /* Mantém o tamanho fixo desejado */
-    margin: 15px auto; /* Centraliza horizontalmente */
+    justify-content: space-between; /* Mantém a distribuição geral */
+    gap: 20px; /* Adiciona 20px de espaço entre os itens */
+    width: 1100px;
+    margin: 15px auto;
     padding: 10px;
     font-size: 18px;
     border: 1px solid #ccc;
