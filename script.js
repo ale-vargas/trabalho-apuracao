@@ -42,7 +42,7 @@ function AbreJsonVotacao() {
         console.log(objeto); // Exibe no console
 
         // Envia o conteúdo para a API (exemplo de envio)
-        fetch("https://localhost:44311/api/Cadastros/eleicao", {
+        fetch("http://25.49.76.159:8060/api/Cadastros/eleicao", {
             method: "POST",
             headers: {
               
@@ -73,7 +73,7 @@ function AbreJsonSessoes() {
           console.log(objeto); // Exibe no console
 
           // Envia o conteúdo para a API (exemplo de envio)
-          fetch("https://localhost:44311/api/Cadastros/eleicao/importacoes-secoes", {
+          fetch("http://25.49.76.159:8060/api/Cadastros/eleicao/importacoes-secoes", {
               method: "POST",
               headers: {
                   "Content-type": "application/json"
@@ -112,7 +112,7 @@ function RecebeApuracao() {
   let percentualAbstencoes = document.getElementById
   ("percentualAbstencoes");
 
-    fetch(`https://localhost:44311/api/Reultados/eleicao/importacoes-secoes?zonaid=${zona?.value || "0"}&secaoid=${secao?.value || "0"}`)
+    fetch(`http://25.49.76.159:8060/api/Reultados/eleicao/importacoes-secoes?zonaid=${zona?.value || "0"}&secaoid=${secao?.value || "0"}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -158,7 +158,7 @@ function RecebeApuracao() {
     let votos2 = document.getElementById
     ("quantidadeVotos5");
 
-    fetch("https://localhost:44311/api/Reultados/eleicao/resultados?zonaid=0&secaoid=0")
+    fetch("http://25.49.76.159:8060/api/Reultados/eleicao/resultados?zonaid=0&secaoid=0")
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
