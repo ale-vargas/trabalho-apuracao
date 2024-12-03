@@ -9,6 +9,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <header class="bg-success text-white text-center py-3 fs-4">Eleições 2024</header>
     <div class="container mt-4">
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -27,18 +28,6 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card p-3 mb-4">
-                        <h3>Importar Dados de Sessões</h3>
-                        <form id="uploadSessoesForm">
-                            <div class="mb-3">
-                                <label for="arquivoSessoes" class="form-label">Escolha o arquivo de Sessões (.json):</label>
-                                <input type="file" id="arquivoSessoes" name="arquivoSessoes" accept=".json" class="form-control">
-                            </div>
-                            <button type="button" class="btn btn-primary" onclick="AbreJsonSessoes()">Enviar Sessões</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-3 mb-4">
                         <h3>Importar Dados da Votação</h3>
                         <form id="uploadVotacaoForm">
                             <div class="mb-3">
@@ -46,6 +35,18 @@
                                 <input type="file" id="arquivoVotacao" name="arquivoVotacao" accept=".json" class="form-control">
                             </div>
                             <button type="button" class="btn btn-primary" onclick="AbreJsonVotacao()">Enviar Votação</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-3 mb-4">
+                        <h3>Importar Dados de Sessões</h3>
+                        <form id="uploadSessoesForm">
+                            <div class="mb-3">
+                                <label for="arquivoSessoes" class="form-label">Escolha o arquivo de Sessões (.json):</label>
+                                <input type="file" id="arquivoSessoes" name="arquivoSessoes" accept=".json" class="form-control">
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="AbreJsonSessoes()">Enviar Sessões</button>
                         </form>
                     </div>
                 </div>
@@ -63,9 +64,6 @@
                 </div>
                 <div class="col-md-3">
                     <button class="btn btn-primary" onclick="RecebeApuracao()">Pesquisar</button>
-                </div>
-                <div class="col-md-3">
-                    <button class="btn btn-secondary" onclick="RecebeApuracao()">Exportar Dados</button>
                 </div>
             </div>
             <h3 id="nomeEleicao"></h3>
