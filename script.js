@@ -52,7 +52,7 @@ function AbreJsonVotacao() {
         })
         .then(response => response.json())  // Trata a resposta da API
         .then(data => {
-            alert("Resposta do servidor: " + JSON.stringify(data));  // Exibe a resposta no alert
+            alert(JSON.stringify(data.message));  // Exibe a resposta no alert
         })
         .catch(error => {
           alert("Erro ao enviar os dados:" + error);  // Exibe erros, caso haja
@@ -82,7 +82,7 @@ function AbreJsonSessoes() {
           })
           .then(response => response.json())  // Trata a resposta da API
           .then(data => {
-              alert("Resposta do servidor: " + JSON.stringify(data));  // Exibe a resposta no alert
+              alert(JSON.stringify(data.message));  // Exibe a resposta no alert
           })
           .catch(error => {
             alert("Erro ao enviar os dados:" + error);  // Exibe erros, caso haja
